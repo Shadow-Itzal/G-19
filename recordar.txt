@@ -1,0 +1,46 @@
+            Instalar .venv si no esta la carpeta: (esto se hace solo una vez)
+
+py -3 -m venv .venv (crea la varpeta .venv)
+
+.venv\Scripts\activate (activa en .venv)
+
+pip install Flask ((instala flask))
+
+---------------------------------------
+            
+            Al iniciar todos los dias, hacer esto en la consola:
+
+cd .venv/scripts (entrar en .venv y tambien a scripts)
+
+activate (activa en .venv)
+
+cd.. (salir de scripts)
+
+cd.. (salir de .vent, carpeta no del modo (.venv))
+
+cd app (entra a carpeta app)
+
+pip install flask (instala flask)
+
+flask --app app.py run --debug (te crea una direccion de navegacion y con debuger muestra esos errores por ese navegador, ademas de consola)
+
+---------------------------------------
+
+            Para que me ponga el HEAD, HEADER y FOOTER en todas las paginas hay que poner esto, donde quieran que se vean:
+
+<!-- include flask - head -->
+{% include 'defaults/head.html' %}
+
+---------------------------------------
+
+<!-- include flask - Header -->
+{% include 'defaults/header.html' %}
+
+---------------------------------------
+
+<!-- include flask - Footer -->
+{% include 'defaults/footer.html' %}
+
+---------------------------------------
+
+

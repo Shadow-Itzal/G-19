@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Contactos</title>
+</head>
+<body>
+    <header>
+        <nav id="volver">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('contacto') }}">Agregar Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Lista de Contactos</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Fecha del Evento</th>
+                <th>Mensaje</th>
+                <th>Acciones</th>
+            </tr>
+            {% for contacto in contactos %}
+            <tr>
+                <td>{{ contacto.id }}</td>
+                <td>{{ contacto.nombre }}</td>
+                <td>{{ contacto.email }}</td>
+                <td>{{ contacto.telefono }}</td>
+                <td>{{ contacto.fecha_evento }}</td>
+                <td>{{ contacto.mensaje }}</td>
+                <td>
+                    <a href="{{ url_for('editar', id=contacto.id) }}">Editar</a>
+                    <a href="{{ url_for('eliminar', id=contacto.id) }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Derechos reservados de autor.</p>
+    </footer>
+</body>
+</html>
